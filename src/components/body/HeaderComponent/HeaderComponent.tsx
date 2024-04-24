@@ -1,12 +1,13 @@
 import React from 'react'
+import './HeaderComponent.css'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 
 function HeaderComponent() {
   return (
     <>
-      <Navbar bg="primary" data-bs-theme="dark">
+      <Navbar  className='navbar' data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Fake Store</Navbar.Brand>
+          <Navbar.Brand href="#home" className='title-header'>Fake Store</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Hot Products</Nav.Link>

@@ -1,8 +1,8 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import HeaderComponent from './components/body/header-component/header-component.tsx'
-import FooterComponent from './components/body/footer-component/footer-component.tsx'
-import BodyComponent from './components/body/body-component/body-component.tsx'
+import HeaderComponent from './components/body/HeaderComponent/HeaderComponent.tsx'
+import FooterComponent from './components/body/FooterComponent/FooterComponent.tsx'
+import BodyComponent from './components/body/BodyComponent/BodyComponent.tsx'
 
 
 function App() {
