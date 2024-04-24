@@ -10,7 +10,7 @@ function ProductCarousel({category, products}: ProductCarouselProps) {
   return (
     <>
       <div className="category">
-        {/*     👇🏻 Diamante negro solido. */}
+        {/*   👇🏻 Solid black diamond. */}
         <h2> &#x2666; {category}</h2>
       </div>
       <section className='carousel'>
