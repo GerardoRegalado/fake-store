@@ -7,6 +7,8 @@ import { IoCartOutline } from 'react-icons/io5';
 import { MdDelete } from "react-icons/md";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import { MdCircle } from "react-icons/md";
+
 
 
 import { adjustQty, removeFromCart } from '../../../redux/reducers/cartReducer.ts';
@@ -35,9 +37,10 @@ function HeaderComponent() {
                     <Nav.Link href="#features">Hot Products</Nav.Link>
                     <Nav.Link href="#pricing">Sales</Nav.Link>
                 </Nav>
+                { cartItems.length > 0 ? (<MdCircle className='notif-icon'/> ) : '' }
                 <NavDropdown
                   align="end" 
-                  title={<IoCartOutline size={24}/>}
+                  title={<IoCartOutline size={24} style={{position: 'relative', display: 'inline-block'}}/>}
                   show={dropdownVisible}
                   onToggle={(isOpen) => setDropdownVisible(isOpen)}
                   id="basic-nav-dropdown">
@@ -53,7 +56,7 @@ function HeaderComponent() {
                                         <img src={item.image} style={{width: '15%', margin: '1vw'}} alt="Does not work" />
                                         <div className='cart-details'>
                                             <p>{item.title} </p>
-                                            <p>${item.price} </p>
+                                            <p>Price: ${item.price} </p>
                                             <p>
                                                 Qty: 
                                                 <Button style={{backgroundColor: 'transparent', border: 'none', color: 'black'}}  onClick={(event) => handleQtyChange(event, item.id, item.qty - 1)}> <IoIosRemoveCircleOutline /> </Button>
@@ -66,6 +69,7 @@ function HeaderComponent() {
                                             <span>Subtotal :${item.price * item.qty} </span>
                                         </div>
                                     </div>
+                                    <hr/>
                                 </NavDropdown.Item>
                             ))
                         ) : (

@@ -14,3 +14,12 @@
     color: inherit;
   }
   
+
+  .notif-icon {
+    position: absolute;
+    top: 1vw; 
+    right: 5.5vw;
+    font-size: 12px;
+    color: red;
+    z-index: 1;
+  }
