@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { ProductCardProps } from '../../../libs/types'
 import { Card, Button, Modal, Col, Row } from 'react-bootstrap'
+import { addToCart } from '../../../redux/reducers/cartReducer.ts';
+import { useDispatch } from 'react-redux'
 
 function ProductCardComponent({product}: ProductCardProps) {
     const [show, setShow] = useState(false);
+    const dispatch = useDispatch();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -44,7 +47,7 @@ function ProductCardComponent({product}: ProductCardProps) {
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>Close</Button>
                     <Button variant="warning" onClick={() => {
-                        console.log("Add to cart: ", product.title);
+                        dispatch(addToCart(product))
                         handleClose();
                     }}>
                         Add to Cart

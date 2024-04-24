@@ -8,3 +8,9 @@
     font-family: "Permanent Marker", system-ui;
     font-weight: 400;
 }
+
+.nav-dropdown-item, .nav-dropdown-item:active, .nav-dropdown-item:focus {
+    background-color: transparent !important;
+    color: inherit;
+  }
+  
